@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\tsait06\source\repos\RatingYourFeeling\RatingYourFeeling\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-28T18:03:19.707</Modified>
+      <Modified>2021-06-29T14:54:09.657</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\tsait06\source\repos\RatingYourFeeling\RatingYourFeeling\bin\x86\Debug\RatingYourFeeling.exe">
       <PackagePath>entrypoint\RatingYourFeeling.exe</PackagePath>
-      <Modified>2021-06-28T18:03:19.114</Modified>
+      <Modified>2021-06-29T14:54:09.372</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -562,15 +562,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsait06\source\repos\RatingYourFeeling\RatingYourFeeling\bin\x86\Debug\RatingYourFeeling.xr.xml">
       <PackagePath>RatingYourFeeling.xr.xml</PackagePath>
-      <Modified>2021-06-28T16:27:47.935</Modified>
+      <Modified>2021-06-29T14:49:45.964</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsait06\source\repos\RatingYourFeeling\RatingYourFeeling\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-06-28T18:03:19.005</Modified>
+      <Modified>2021-06-29T14:51:29.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsait06\source\repos\RatingYourFeeling\RatingYourFeeling\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-06-28T18:03:19.005</Modified>
+      <Modified>2021-06-29T14:51:29.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -582,7 +582,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsait06\source\repos\RatingYourFeeling\RatingYourFeeling\bin\x86\Debug\Core\RatingYourFeeling.exe">
       <PackagePath>RatingYourFeeling.exe</PackagePath>
-      <Modified>2021-06-28T18:03:19.703</Modified>
+      <Modified>2021-06-29T14:54:09.655</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

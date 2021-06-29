@@ -46,8 +46,6 @@ namespace RatingYourFeeling
             }
         }
 
-
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged(string name)
@@ -55,23 +53,21 @@ namespace RatingYourFeeling
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        //private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
     }
 
     public sealed partial class MainPage : Page
     {
         int ratingValue ;
         ArrayList ratingArray = new ArrayList(); 
-        int arrayCount = 0;
+        int arrayCount = 1;
         public MainPage()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// https://stackoverflow.com/questions/54629036/uwp-c-sharp-dynamically-change-chart-when-changing-data
+        /// </summary>
         public ObservableCollection<RatingFeeling> LstSource
         {
             get { return lstSource; }
@@ -79,12 +75,11 @@ namespace RatingYourFeeling
 
         private ObservableCollection<RatingFeeling> lstSource = new ObservableCollection<RatingFeeling>
         {
-            //new RatingFeeling() { Time = "1", Rating = 1 },
-            //new RatingFeeling() { Time = "2", Rating = 1 },
-
-          
+            new RatingFeeling() { Time = "1-10", Rating = 10 },
+            new RatingFeeling() { Time = "1-10", Rating = 1 },
         };
 
+        #region buttom click
         private void Maximal_Click(object sender, RoutedEventArgs e)
         {
             ratingValue = 10;
@@ -92,6 +87,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 10 });
+            arrayCount++;
         }
 
         private void Really_Really_hard_Button_Click(object sender, RoutedEventArgs e)
@@ -101,6 +97,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 9 });
+            arrayCount++;
         }
 
         private void Really_hard_Button_Click(object sender, RoutedEventArgs e)
@@ -110,6 +107,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 8 });
+            arrayCount++;
         }
 
         private void Challenging_hard_Button_Click(object sender, RoutedEventArgs e)
@@ -119,6 +117,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 7 });
+            arrayCount++;
         }
 
         private void Hard_Button_Click(object sender, RoutedEventArgs e)
@@ -128,6 +127,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 6 });
+            arrayCount++;
         }
 
         private void Challenging_Button_Click(object sender, RoutedEventArgs e)
@@ -137,6 +137,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 5 });
+            arrayCount++;
         }
 
         private void Moderate_Button_Click(object sender, RoutedEventArgs e)
@@ -148,7 +149,7 @@ namespace RatingYourFeeling
             //lstSource[0].Rating = 4;
             lstSource.Add(new RatingFeeling() { Time = now , Rating = 4 });
             //ratingArray.Add(ratingValue);
-            //arrayCount++;
+            arrayCount++;
         }
 
         private void Easy_Button_Click(object sender, RoutedEventArgs e)
@@ -158,6 +159,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 3 });
+            arrayCount++;
         }
 
         private void Really_Easy_Button_Click_1(object sender, RoutedEventArgs e)
@@ -167,6 +169,7 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 2 });
+            arrayCount++;
         }
 
         private void Rest_Button_Click(object sender, RoutedEventArgs e)
@@ -176,11 +179,15 @@ namespace RatingYourFeeling
             DateTime localDate = DateTime.Now;
             var now = localDate.ToString("HH:mm:ss");
             lstSource.Add(new RatingFeeling() { Time = now, Rating = 1 });
+            arrayCount++;
         }
+
+        #endregion
 
         private void Page_loaded(object sender, RoutedEventArgs e)
         {
             //LoadChartContents();
+            
         }
 
 
@@ -205,6 +212,24 @@ namespace RatingYourFeeling
             //rateSource.Add(new RatingFeeling() { time = "10:25", Rating = 2 });
             //rateSource.Add(new RatingFeeling() { time = "10:20", Rating = 3 });
             (LineChart.Series[0] as LineSeries).ItemsSource = rateSource;
+        }
+
+        private void Clean_Button_Click(object sender, RoutedEventArgs e)
+        {
+            lstSource.Clear();
+            lstSource.Add(new RatingFeeling() { Time = "1-10", Rating = 10 });
+            lstSource.Add(new RatingFeeling() { Time = "1-10", Rating = 1 });
+            arrayCount = 1;
+        }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (arrayCount > 1)
+            {
+                lstSource.RemoveAt(arrayCount);
+                arrayCount--;
+            }
+       
         }
     }
 }
